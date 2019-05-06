@@ -1,0 +1,22 @@
+= Hugo docker image
+
+This is a base image I use for building static websites using https://gohugo.io[Hugo].
+
+It contains a recent version of hugo-extended, https://asciidoctor.org/[AsciiDoctor],
+and http://pygments.org/[Pygments] support for them both.
+
+Typical use will look like:
+
+[source,dockerfile]
+----
+FROM csmith/hugo AS hugo
+
+ADD site /tmp/site
+RUN hugo -b https://example.com -v -s /tmp/site -d /tmp/output
+
+# Further process or serve the generated output
+FROM another/image 
+
+COPY --from=hugo /tmp/output ....
+----
+
