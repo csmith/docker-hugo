@@ -1,4 +1,10 @@
-= Hugo docker image
+= Deprecated
+
+I now build a hugo container via my https://github.com/csmith/dockerfiles[dockerfiles]
+repository. It is kept up-to-date automatically (unlike this repo). You can pull it
+from `reg.c5h.io/hugo`.
+
+== Hugo docker image
 
 This is a base image I use for building static websites using https://gohugo.io[Hugo].
 
